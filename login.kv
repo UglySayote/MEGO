@@ -1,0 +1,120 @@
+MDScreen:
+    name: "login"
+    MDFloatLayout:
+        md_bg_color: kivy.utils.get_color_from_hex("#FDA300")
+        Image:
+            source: "images\mego-icon.png"
+            size_hint: .5, .5
+            pos_hint: {"center_x": .5, "center_y": .8}
+        MDLabel:
+            text: "Mechanical on the Go will help you to find the\nnearest mechanical shop at your convenience"
+            pos_hint: {"center_x": .5, "center_y": .55}
+            halign: "center"
+            font_size: "15dp"
+            font_name: "fonts/Nunito-Light.ttf"
+        MDFloatLayout:
+            size_hint: .85, .08
+            pos_hint: {"center_x": .47, "center_y": .51} 
+            MDLabel:
+                text: "Email"
+                font_size: "12dp"
+                font_name: "fonts/Nunito-Bold.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.30}
+            TextInput:
+                id: login_email
+                size_hint_y: .75
+                font_name: "fonts/Nunito-Regular.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.9}
+                write_tab: False
+                background_color: 0, 0, 0, 0
+                cursor_color: 0, 0, 0, 1
+                cursor_width: "2dp"
+                foreground_color: 0, 0, 0, 1
+                font_size: "17dp"
+                hint_text: "juandelacruz@gmail.com"
+                hint_text_color: 0, 0, 0, .45
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": .53, "center_y": -1.2}
+                size_hint_y: .03
+                md_bg_color: 0, 0, 0, 1
+
+        MDFloatLayout:
+            size_hint: .85, .08
+            pos_hint: {"center_x": .47, "center_y": .41} 
+            MDLabel:
+                text: "Password"
+                font_size: "12dp"
+                font_name: "fonts/Nunito-Bold.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.30}
+            TextInput:
+                id: login_passwd
+                size_hint_y: .75
+                font_name: "fonts/Nunito-Regular.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.9}
+                write_tab: False
+                background_color: 0, 0, 0, 0
+                cursor_color: 0, 0, 0, 1
+                cursor_width: "2dp"
+                foreground_color: 0, 0, 0, 1
+                font_size: "17dp"
+                multiline: False
+                password: True
+            MDFloatLayout:
+                pos_hint: {"center_x": .53, "center_y": -1.2}
+                size_hint_y: .03
+                md_bg_color: 0, 0, 0, 1
+            MDIconButton:
+                id: eye_con_one
+                icon: "icons/basic/eye-no@2x.png" if tog.state == "normal" else "icons/basic/eye@2x.png"
+                user_font_size: "5dp"
+                pos_hint: {"center_x": .99, "center_y": -.84}
+                ToggleButton:
+                    id: tog
+                    background_color: 0, 0, 0, 0
+                    on_state:
+                        app.show_pass(self,login_passwd)     
+
+        Button:
+            text: "Login"
+            background_color: 0,0,0,0
+            font_name: "fonts/Nunito-Bold.ttf"
+            color: kivy.utils.get_color_from_hex("#FDA300")
+            size_hint: .85, .08
+            pos_hint: {"center_x": .50, "center_y": .19}
+            canvas.before:
+                Color:
+                    rgba: kivy.utils.get_color_from_hex("#1F4762") if self.state == "normal" else kivy.utils.get_color_from_hex("#153040")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [8]
+            on_release:
+                app.submit_login()
+                 
+        MDTextButton:
+            text: "Forgot Password?"
+            font_name: "fonts/Nunito-Bold.ttf"
+            font_size: "12dp"
+            pos_hint: {"center_x": .5, "center_y": .10}
+            halign: "center"
+            color: 0, 0, 0, 1
+            on_release:
+                app.root.current = "forgot"
+                root.manager.transition.direction = "left"
+        MDTextButton:
+            text: "Don't have an account?"
+            font_name: "fonts/Nunito-Bold.ttf"
+            font_size: "12dp"
+            pos_hint: {"center_x": .5, "center_y": .06}
+            halign: "center"
+            color: 0, 0, 0, 1
+            on_release:
+                app.root.current = "register"
+                root.manager.transition.direction = "left"
+
+
+                
+
+
+

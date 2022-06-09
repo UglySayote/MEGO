@@ -1,0 +1,192 @@
+MDScreen:
+    name: "home"
+
+    MDFloatLayout:
+        md_bg_color: kivy.utils.get_color_from_hex("#FDA300")
+
+        MDIconButton:
+            icon: "icons/basic/user@2x.png"
+            user_font_size: "10dp"
+            pos_hint: {"center_x": .93, "center_y": .96}
+            on_release:
+                app.root.current = "profile"
+                root.manager.transition.direction = "left"
+        MDLabel:
+            text: "ME|GO"
+            pos_hint: {"center_x": .5, "center_y": .95}
+            halign: "center"
+            font_size: "35dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+        Image:
+            source: "images/Dashboard.png"
+            size_hint: .90, 5
+            pos_hint: {"center_x": .50, "center_y": .8}
+        MDLabel:
+            id: car_model
+            text: ""
+            pos_hint: {"center_x": .60, "center_y": .85}
+            halign: "left"
+            font_name: "fonts/Nunito-BoldItalic.ttf"
+
+        Button:
+            text: "Nearby Mechanic"
+            text_size: self.size     
+            halign: 'center'
+            valign: 'bottom'
+            padding_y: 10
+            font_size: "11dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            background_color: 0,0,0,0
+            color: kivy.utils.get_color_from_hex("#FDA300")
+            size_hint: .37, .15
+            pos_hint: {"center_x": .27, "center_y": .55}
+            canvas.before:
+                Color:
+                    rgba: kivy.utils.get_color_from_hex("#1F4762") if self.state == "normal" else kivy.utils.get_color_from_hex("#153040")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]
+            on_release:
+                app.get_market()
+                app.root.current = "map_one"
+                root.manager.transition.direction = "left"
+            Image:
+                source: "icons\home\service.png"
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y + 5
+
+        Button:
+            text: "Traveling Planner"
+            text_size: self.size     
+            halign: 'center'
+            valign: 'bottom'
+            padding_y: 10
+            font_size: "11dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            background_color: 0,0,0,0
+            color: kivy.utils.get_color_from_hex("#FDA300")
+            size_hint: .37, .15
+            pos_hint: {"center_x": .74, "center_y": .55}
+            canvas.before:
+                Color:
+                    rgba: kivy.utils.get_color_from_hex("#1F4762") if self.state == "normal" else kivy.utils.get_color_from_hex("#153040")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]
+            on_release:
+                app.root.current = "planner"
+                root.manager.transition.direction = "left"
+            Image:
+                source: "icons\home\planner.png"
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y + 8
+        Button:
+            text: "Automobile Parts Shop"
+            text_size: self.size     
+            halign: 'center'
+            valign: 'bottom'
+            padding_y: 10
+            font_size: "11dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            background_color: 0,0,0,0
+            color: kivy.utils.get_color_from_hex("#FDA300")
+            size_hint: .37, .15
+            pos_hint: {"center_x": .27, "center_y": .35}
+            canvas.before:
+                Color:
+                    rgba: kivy.utils.get_color_from_hex("#1F4762") if self.state == "normal" else kivy.utils.get_color_from_hex("#153040")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]
+            on_release:
+                app.root.current = "autoshop"
+                root.manager.transition.direction = "left"
+            Image:
+                source: "icons\home\shop.png"
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y + 5
+        Button:
+            text: "Promotions"
+            text_size: self.size     
+            halign: 'center'
+            valign: 'bottom'
+            padding_y: 10
+            font_size: "11dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            background_color: 0,0,0,0
+            color: kivy.utils.get_color_from_hex("#FDA300")
+            size_hint: .37, .15
+            pos_hint: {"center_x": .74, "center_y": .35}
+            canvas.before:
+                Color:
+                    rgba: kivy.utils.get_color_from_hex("#1F4762") if self.state == "normal" else kivy.utils.get_color_from_hex("#153040")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]
+            on_release:
+                app.root.current = "promo"
+                root.manager.transition.direction = "left"
+            Image:
+                source: "icons\home\promote.png"
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y + 5
+        Button:
+            text: "Transaction Record"
+            text_size: self.size     
+            halign: 'center'
+            valign: 'bottom'
+            padding_y: 10
+            font_size: "11dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            background_color: 0,0,0,0
+            color: kivy.utils.get_color_from_hex("#FDA300")
+            size_hint: .37, .15
+            pos_hint: {"center_x": .27, "center_y": .15}
+            canvas.before:
+                Color:
+                    rgba: kivy.utils.get_color_from_hex("#1F4762") if self.state == "normal" else kivy.utils.get_color_from_hex("#153040")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]
+            on_release:
+                app.root.current = "history"
+                root.manager.transition.direction = "left"
+            Image:
+                source: "icons/home/records.png"
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y + 5
+        Button:
+            text: "Settings"
+            text_size: self.size     
+            halign: 'center'
+            valign: 'bottom'
+            padding_y: 10
+            font_size: "11dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            background_color: 0,0,0,0
+            color: kivy.utils.get_color_from_hex("#FDA300")
+            size_hint: .37, .15
+            pos_hint: {"center_x": .74, "center_y": .15}
+            canvas.before:
+                Color:
+                    rgba: kivy.utils.get_color_from_hex("#1F4762") if self.state == "normal" else kivy.utils.get_color_from_hex("#153040")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]
+            on_release:
+                app.root.current = "settings"
+                root.manager.transition.direction = "right"
+            Image:
+                source: "icons\home\settings.png"
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y + 5
+
+        
+
+

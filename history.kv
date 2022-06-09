@@ -1,0 +1,268 @@
+MDScreen:
+    name: "history"
+    MDFloatLayout:
+        md_bg_color: kivy.utils.get_color_from_hex("#FDA300")
+
+        MDFloatLayout:
+            md_bg_color: kivy.utils.get_color_from_hex("#1F4762")
+            size_hint: 1, .07
+            pos_hint: {"center_x": .5, "center_y": .97}
+        MDIconButton:
+            icon: "icons/white/chevron-left.png"
+            user_font_size: ".1dp"
+            pos_hint: {"center_x": .05, "center_y": .97}
+            on_release:
+                app.decide_home()
+                root.manager.transition.direction = "right"
+        MDLabel:
+            text: "Transaction History"
+            pos_hint: {"center_x": .6, "center_y": .97}
+            halign: "left"
+            font_size: "20dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            color: kivy.utils.get_color_from_hex("#FEDFA6")
+        Button:
+            background_color: 0,0,0,0
+            color: kivy.utils.get_color_from_hex("#FDA300")
+            size_hint: .9, .11
+            pos_hint: {"center_x": .5, "center_y": .80}
+            canvas.before:
+                Color:
+                    rgba: kivy.utils.get_color_from_hex("#FEDFA6") if self.state == "normal" else kivy.utils.get_color_from_hex("#baa377")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]
+        MDLabel:
+            text: "Purchased on:"
+            pos_hint: {"center_x": .165, "center_y": .83}
+            halign: "center"
+            font_size: "12dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+        MDLabel:
+            text: "MANG BOY MECHANICS"
+            pos_hint: {"center_x": .3, "center_y": .80}
+            halign: "center"
+            font_size: "15dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+        MDLabel:
+            text: "May 25,2022"
+            pos_hint: {"center_x": .8, "center_y": .83}
+            halign: "center"
+            font_size: "12dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+        MDLabel:
+            text: "PHP 1,500.00"
+            pos_hint: {"center_x": .81, "center_y": .80}
+            halign: "center"
+            font_size: "12dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+
+        Button:
+            background_color: 0,0,0,0
+            color: kivy.utils.get_color_from_hex("#FDA300")
+            size_hint: .9, .11
+            pos_hint: {"center_x": .5, "center_y": .67}
+            canvas.before:
+                Color:
+                    rgba: kivy.utils.get_color_from_hex("#FEDFA6") if self.state == "normal" else kivy.utils.get_color_from_hex("#baa377")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]
+        MDLabel:
+            text: "Purchased on:"
+            pos_hint: {"center_x": .165, "center_y": .70}
+            halign: "center"
+            font_size: "12dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+        MDLabel:
+            text: "Rafast carwash & Auto Detailing"
+            pos_hint: {"center_x": .363, "center_y": .67}
+            halign: "center"
+            font_size: "15dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+        MDLabel:
+            text: "May 24,2022"
+            pos_hint: {"center_x": .8, "center_y": .70}
+            halign: "center"
+            font_size: "12dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+        MDLabel:
+            text: "PHP 250.00"
+            pos_hint: {"center_x": .795, "center_y": .67}
+            halign: "center"
+            font_size: "12dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+
+        Button:
+            background_color: 0,0,0,0
+            color: kivy.utils.get_color_from_hex("#FDA300")
+            size_hint: .9, .11
+            pos_hint: {"center_x": .5, "center_y": .54}
+            canvas.before:
+                Color:
+                    rgba: kivy.utils.get_color_from_hex("#FEDFA6") if self.state == "normal" else kivy.utils.get_color_from_hex("#baa377")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]
+        MDLabel:
+            text: "Purchased on:"
+            pos_hint: {"center_x": .165, "center_y": .57}
+            halign: "center"
+            font_size: "12dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+        MDLabel:
+            text: "TOP-UP"
+            pos_hint: {"center_x": .138, "center_y": .54}
+            halign: "center"
+            font_size: "15dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+        MDLabel:
+            text: "Convenience fee"
+            pos_hint: {"center_x": .174, "center_y": .515}
+            halign: "center"
+            font_size: "11dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+        MDLabel:
+            text: "May 21,2022"
+            pos_hint: {"center_x": .8, "center_y": .57}
+            halign: "center"
+            font_size: "12dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+        MDLabel:
+            text: "PHP 2000.00"
+            pos_hint: {"center_x": .807, "center_y": .54}
+            halign: "center"
+            font_size: "12dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+        MDLabel:
+            text: "PHP 20.00"
+            pos_hint: {"center_x": .774, "center_y": .515}
+            halign: "center"
+            font_size: "10dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+
+        Button:
+            background_color: 0,0,0,0
+            color: kivy.utils.get_color_from_hex("#FDA300")
+            size_hint: .9, .11
+            pos_hint: {"center_x": .5, "center_y": .41}
+            canvas.before:
+                Color:
+                    rgba: kivy.utils.get_color_from_hex("#FEDFA6") if self.state == "normal" else kivy.utils.get_color_from_hex("#baa377")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]
+        MDLabel:
+            text: "Purchased on:"
+            pos_hint: {"center_x": .165, "center_y": .44}
+            halign: "center"
+            font_size: "12dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+        MDLabel:
+            text: "HONDA TOWING CAPACITY"
+            pos_hint: {"center_x": .34, "center_y": .41}
+            halign: "center"
+            font_size: "15dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+        MDLabel:
+            text: "May 11,2022"
+            pos_hint: {"center_x": .8, "center_y": .44}
+            halign: "center"
+            font_size: "12dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+        MDLabel:
+            text: "PHP 2000.00"
+            pos_hint: {"center_x": .807, "center_y": .41}
+            halign: "center"
+            font_size: "12dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+
+        Button:
+            background_color: 0,0,0,0
+            color: kivy.utils.get_color_from_hex("#FDA300")
+            size_hint: .9, .11
+            pos_hint: {"center_x": .5, "center_y": .28}
+            canvas.before:
+                Color:
+                    rgba: kivy.utils.get_color_from_hex("#FEDFA6") if self.state == "normal" else kivy.utils.get_color_from_hex("#baa377")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]
+        MDLabel:
+            text: "Purchased on:"
+            pos_hint: {"center_x": .165, "center_y": .313}
+            halign: "center"
+            font_size: "12dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+        MDLabel:
+            text: "TOP-UP"
+            pos_hint: {"center_x": .138, "center_y": .285}
+            halign: "center"
+            font_size: "15dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+        MDLabel:
+            text: "Convenience fee"
+            pos_hint: {"center_x": .174, "center_y": .26}
+            halign: "center"
+            font_size: "11dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+        MDLabel:
+            text: "May 11,2022"
+            pos_hint: {"center_x": .8, "center_y": .31}
+            halign: "center"
+            font_size: "12dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+        MDLabel:
+            text: "PHP 2000.00"
+            pos_hint: {"center_x": .807, "center_y": .285}
+            halign: "center"
+            font_size: "12dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+        MDLabel:
+            text: "PHP 20.00"
+            pos_hint: {"center_x": .774, "center_y": .259}
+            halign: "center"
+            font_size: "10dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+
+        Button:
+            background_color: 0,0,0,0
+            color: kivy.utils.get_color_from_hex("#FDA300")
+            size_hint: .9, .11
+            pos_hint: {"center_x": .5, "center_y": .15}
+            canvas.before:
+                Color:
+                    rgba: kivy.utils.get_color_from_hex("#FEDFA6") if self.state == "normal" else kivy.utils.get_color_from_hex("#baa377")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]
+        MDLabel:
+            text: "Purchased on:"
+            pos_hint: {"center_x": .165, "center_y": .18}
+            halign: "center"
+            font_size: "12dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+        MDLabel:
+            text: "AQUATIC CARWASH"
+            pos_hint: {"center_x": .265, "center_y": .145}
+            halign: "center"
+            font_size: "15dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+        MDLabel:
+            text: "April 30,2022"
+            pos_hint: {"center_x": .81, "center_y": .18}
+            halign: "center"
+            font_size: "12dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+        MDLabel:
+            text: "PHP 260.00"
+            pos_hint: {"center_x": .797, "center_y": .15}
+            halign: "center"
+            font_size: "12dp"
+            font_name: "fonts/Nunito-Regular.ttf"

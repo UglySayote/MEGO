@@ -1,0 +1,111 @@
+MDScreen:
+    name: "forgot_reset"
+    MDFloatLayout:
+        md_bg_color: kivy.utils.get_color_from_hex("#FDA300")
+        MDIconButton:
+            icon: "icons/arrows/chevron-left@2x.png"
+            user_font_size: "5dp"
+            pos_hint: {"center_x": .05, "center_y": .97}
+            on_release:
+                app.root.current = "forgot"
+                root.manager.transition.direction = "right"
+        MDLabel:
+            text: "Change Password"
+            pos_hint: {"center_x": .5, "center_y": .85}
+            halign: "center"
+            font_size: "31dp"
+            font_name: "fonts/Nunito-Light.ttf"
+
+        MDFloatLayout:
+            size_hint: .85, .08
+            pos_hint: {"center_x": .47, "center_y": .73} 
+            MDLabel:
+                text: "New password"
+                font_size: "12dp"
+                font_name: "fonts/Nunito-Bold.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.30}
+            TextInput:
+                id: forg_reset_passwd
+                size_hint_y: .70
+                font_name: "fonts/Nunito-Light.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.82}
+                write_tab: False
+                hint_text_color: 0, 0, 0, .45
+                background_color: 0, 0, 0, 0
+                cursor_color: 0, 0, 0, 1
+                cursor_width: "2dp"
+                foreground_color: 0, 0, 0, 1
+                font_size: "17dp"
+                multiline: False
+                password: True
+            MDFloatLayout:
+                pos_hint: {"center_x": .53, "center_y": -1.15}
+                size_hint_y: .03
+                md_bg_color: 0, 0, 0, 1
+            MDIconButton:
+                id: eye_con_three
+                icon: "icons/basic/eye-no@2x.png" if tog_three.state == "normal" else "icons/basic/eye@2x.png"
+                user_font_size: "5dp"
+                pos_hint: {"center_x": .99, "center_y": -.78}
+                ToggleButton:
+                    id: tog_three
+                    background_color: 0, 0, 0, 0
+                    on_state:
+                        app.show_pass(self, forg_reset_passwd)
+
+        MDFloatLayout:
+            size_hint: .85, .08
+            pos_hint: {"center_x": .47, "center_y": .65} 
+            MDLabel:
+                text: "Re-enter new password"
+                font_size: "12dp"
+                font_name: "fonts/Nunito-Bold.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.30}
+            TextInput:
+                id: forg_reset_cnfrm
+                size_hint_y: .70
+                font_name: "fonts/Nunito-Light.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.82}
+                write_tab: False
+                hint_text_color: 0, 0, 0, .45
+                background_color: 0, 0, 0, 0
+                cursor_color: 0, 0, 0, 1
+                cursor_width: "2dp"
+                foreground_color: 0, 0, 0, 1
+                font_size: "17dp"
+                multiline: False
+                password: True
+            MDFloatLayout:
+                pos_hint: {"center_x": .53, "center_y": -1.15}
+                size_hint_y: .03
+                md_bg_color: 0, 0, 0, 1
+            MDIconButton:
+                id: eye_con_four
+                icon: "icons/basic/eye-no@2x.png" if tog_four.state == "normal" else "icons/basic/eye@2x.png"
+                user_font_size: "5dp"
+                pos_hint: {"center_x": .99, "center_y": -.78}
+                ToggleButton:
+                    id: tog_four
+                    background_color: 0, 0, 0, 0
+                    on_state:
+                        app.show_pass(self, forg_reset_cnfrm)
+
+        Button:
+            id: submit_reset
+            text: "Submit"
+            background_color: 0,0,0,0
+            font_name: "fonts/Nunito-Bold.ttf"
+            color: kivy.utils.get_color_from_hex("#FDA300")
+            size_hint: .848, .08
+            pos_hint: {"center_x": .497, "center_y": .42}
+            canvas.before:
+                Color:
+                    rgba: kivy.utils.get_color_from_hex("#1F4762") if self.state == "normal" else kivy.utils.get_color_from_hex("#153040")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [8]
+            on_release:
+                app.reset_passwd() if forg_reset_passwd.text != '' and forg_reset_cnfrm.text != '' else app.reg_warning_dialog()
+                forg_reset_passwd.text = ''
+                forg_reset_cnfrm.text = ''

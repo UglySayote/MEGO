@@ -1,0 +1,50 @@
+MDScreen:
+    name: "promo"
+    MDFloatLayout:
+        md_bg_color: kivy.utils.get_color_from_hex("#FDA300")
+
+        MDFloatLayout:
+            md_bg_color: kivy.utils.get_color_from_hex("#1F4762")
+            size_hint: 1, .07
+            pos_hint: {"center_x": .5, "center_y": .97}
+        MDIconButton:
+            icon: "icons/white/chevron-left.png"
+            user_font_size: ".1dp"
+            pos_hint: {"center_x": .05, "center_y": .97}
+            on_release:
+                app.decide_home()
+                root.manager.transition.direction = "right"
+        MDLabel:
+            text: "Promotions"
+            pos_hint: {"center_x": .6, "center_y": .97}
+            halign: "left"
+            font_size: "20dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            color: kivy.utils.get_color_from_hex("#FEDFA6")
+        
+        Button:
+            background_normal: "images/honda.png"
+            background_down: "images/honda_pressed.png"
+            size_hint: .97, .31
+            pos_hint: {"center_x": .5, "center_y": .77}
+            on_release:
+                #app.root.current = "home"
+                #root.manager.transition.direction = "right"
+        Button:
+            background_normal: "images/toyota.png"
+            background_down: "images/toyota_pressed.png"
+            size_hint: .97, .32
+            pos_hint: {"center_x": .5, "center_y": .46}
+            on_release:
+                #app.root.current = "home"
+                #root.manager.transition.direction = "right"
+        Button:
+            background_normal: "images/pronto.png"
+            background_down: "images/pronto_pressed.png"
+            size_hint: .97, .29
+            pos_hint: {"center_x": .5, "center_y": .155}
+            on_release:
+                #app.root.current = "home"
+                #root.manager.transition.direction = "right"
+                
+        

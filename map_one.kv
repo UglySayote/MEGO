@@ -1,0 +1,112 @@
+
+MDScreen:
+    name: "map_one"
+    MapView:
+        id:map
+        lat: 14.69557062713212
+        lon: 121.12329539518919 
+        zoom: 14
+    MDFloatLayout:
+        md_bg_color: kivy.utils.get_color_from_hex("#1F4762")
+        size_hint: 1, .07
+        pos_hint: {"center_x": .5, "center_y": .97}
+    MDIconButton:
+        icon: "icons/white/chevron-left.png"
+        user_font_size: ".1dp"
+        pos_hint: {"center_x": .05, "center_y": .97}
+        on_release:
+            app.root.current = "home"
+            root.manager.transition.direction = "right"
+    Button:
+        text: "Towing"
+        text_size: self.size     
+        halign: 'center'
+        valign: 'center'
+        font_size: "12dp"
+        font_name: "fonts/Nunito-Bold.ttf"
+        background_color: 0,0,0,0
+        color: kivy.utils.get_color_from_hex("#FEDFA6")
+        size_hint: .2, .08
+        pos_hint: {"center_x": .85, "center_y": .88}
+        canvas.before:
+            Color:
+                rgba: kivy.utils.get_color_from_hex("#1F4762") if self.state == "normal" else kivy.utils.get_color_from_hex("#153040")
+            RoundedRectangle:
+                size: self.size
+                pos: self.pos
+                radius: [10]
+        on_release:
+            app.get_tow()
+
+    Button:
+        id: wash_tog
+        text: "Carwash"
+        text_size: self.size     
+        halign: 'center'
+        valign: 'center'
+        font_size: "12dp"
+        font_name: "fonts/Nunito-Bold.ttf"
+        background_color: 0,0,0,0
+        color: kivy.utils.get_color_from_hex("#FEDFA6")
+        size_hint: .2, .08
+        pos_hint: {"center_x": .85, "center_y": .79}
+        canvas.before:
+            Color:
+                rgba: kivy.utils.get_color_from_hex("#1F4762") if self.state == "normal" else kivy.utils.get_color_from_hex("#153040")
+            RoundedRectangle:
+                size: self.size
+                pos: self.pos
+                radius: [10]
+        on_release:
+            app.get_carwash()
+            
+    Button:
+        text: "Gas"
+        text_size: self.size     
+        halign: 'center'
+        valign: 'center'
+        font_size: "12dp"
+        font_name: "fonts/Nunito-Bold.ttf"
+        background_color: 0,0,0,0
+        color: kivy.utils.get_color_from_hex("#FEDFA6")
+        size_hint: .2, .08
+        pos_hint: {"center_x": .85, "center_y": .7}
+        canvas.before:
+            Color:
+                rgba: kivy.utils.get_color_from_hex("#1F4762") if self.state == "normal" else kivy.utils.get_color_from_hex("#153040")
+            RoundedRectangle:
+                size: self.size
+                pos: self.pos
+                radius: [10]
+        on_release:
+            app.get_gas()
+
+    Button:
+        text: "Hospital"
+        text_size: self.size     
+        halign: 'center'
+        valign: 'center'
+        font_size: "12dp"
+        font_name: "fonts/Nunito-Bold.ttf"
+        background_color: 0,0,0,0
+        color: kivy.utils.get_color_from_hex("#FEDFA6")
+        size_hint: .2, .08
+        pos_hint: {"center_x": .85, "center_y": .61}
+        canvas.before:
+            Color:
+                rgba: kivy.utils.get_color_from_hex("#1F4762") if self.state == "normal" else kivy.utils.get_color_from_hex("#153040")
+            RoundedRectangle:
+                size: self.size
+                pos: self.pos
+                radius: [10]
+        on_release:
+            app.get_hospital()
+
+    MDLabel:
+        text: "Map"
+        pos_hint: {"center_x": .6, "center_y": .97}
+        halign: "left"
+        font_size: "20dp"
+        font_name: "fonts/Nunito-Bold.ttf"
+        color: kivy.utils.get_color_from_hex("#FEDFA6")
+    

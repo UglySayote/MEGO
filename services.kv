@@ -1,0 +1,170 @@
+MDScreen:
+    name: "services"
+    MDFloatLayout:
+        md_bg_color: kivy.utils.get_color_from_hex("#FDA300")
+
+        MDFloatLayout:
+            md_bg_color: kivy.utils.get_color_from_hex("#1F4762")
+            size_hint: 1, .07
+            pos_hint: {"center_x": .5, "center_y": .97}
+        MDIconButton:
+            icon: "icons/white/chevron-left.png"
+            user_font_size: ".1dp"
+            pos_hint: {"center_x": .05, "center_y": .97}
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+        MDLabel:
+            text: "Services"
+            pos_hint: {"center_x": .6, "center_y": .97}
+            halign: "left"
+            font_size: "20dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            color: kivy.utils.get_color_from_hex("#FEDFA6")
+        Button:
+            text: "Nearby Mechanic Shops"
+            text_size: self.size     
+            halign: 'center'
+            valign: 'bottom'
+            padding_y: 10
+            font_size: "11dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            background_color: 0,0,0,0
+            color: kivy.utils.get_color_from_hex("#FDA300")
+            size_hint: .82, .20
+            pos_hint: {"center_x": .5, "center_y": .78}
+            canvas.before:
+                Color:
+                    rgba: kivy.utils.get_color_from_hex("#1F4762") if self.state == "normal" else kivy.utils.get_color_from_hex("#153040")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]
+            on_release:
+                app.root.current = "map_one"
+                root.manager.transition.direction = "left"
+                
+        Button:
+            text: "Towing"
+            text_size: self.size     
+            halign: 'center'
+            valign: 'bottom'
+            padding_y: 10
+            font_size: "11dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            background_color: 0,0,0,0
+            color: kivy.utils.get_color_from_hex("#FDA300")
+            size_hint: .37, .15
+            pos_hint: {"center_x": .27, "center_y": .55}
+            canvas.before:
+                Color:
+                    rgba: kivy.utils.get_color_from_hex("#1F4762") if self.state == "normal" else kivy.utils.get_color_from_hex("#153040")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]
+            on_release:
+            Image:
+                source: "icons/services/tow.png"
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y + 5
+        Button:
+            text: "Carwash"
+            text_size: self.size     
+            halign: 'center'
+            valign: 'bottom'
+            padding_y: 10
+            font_size: "11dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            background_color: 0,0,0,0
+            color: kivy.utils.get_color_from_hex("#FDA300")
+            size_hint: .37, .15
+            pos_hint: {"center_x": .74, "center_y": .55}
+            canvas.before:
+                Color:
+                    rgba: kivy.utils.get_color_from_hex("#1F4762") if self.state == "normal" else kivy.utils.get_color_from_hex("#153040")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]
+            on_release:
+            Image:
+                source: "icons/services/wash.png"
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y + 5
+
+        Button:
+            text: "Gasoline Station"
+            text_size: self.size     
+            halign: 'center'
+            valign: 'bottom'
+            padding_y: 10
+            font_size: "11dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            background_color: 0,0,0,0
+            color: kivy.utils.get_color_from_hex("#FDA300")
+            size_hint: .37, .15
+            pos_hint: {"center_x": .27, "center_y": .35}
+            canvas.before:
+                Color:
+                    rgba: kivy.utils.get_color_from_hex("#1F4762") if self.state == "normal" else kivy.utils.get_color_from_hex("#153040")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]
+            on_release:
+            Image:
+                source: "icons/services/fuel.png"
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y + 5
+        Button:
+            text: "Lockout Service"
+            text_size: self.size     
+            halign: 'center'
+            valign: 'bottom'
+            padding_y: 10
+            font_size: "11dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            background_color:0,0,0,0
+            color: kivy.utils.get_color_from_hex("#FDA300")
+            size_hint: .37, .15
+            pos_hint: {"center_x": .74, "center_y": .35}
+            canvas.before:
+                Color:
+                    rgba: kivy.utils.get_color_from_hex("#1F4762") if self.state == "normal" else kivy.utils.get_color_from_hex("#153040")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]
+            on_release:
+            Image:
+                source: "icons/services/lock.png"
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y + 5
+
+        Button:
+            text: "Hospitals"
+            text_size: self.size     
+            halign: 'center'
+            valign: 'bottom'
+            padding_y: 10
+            font_size: "11dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            background_color: 0,0,0,0
+            color: kivy.utils.get_color_from_hex("#FDA300")
+            size_hint: .37, .15
+            pos_hint: {"center_x": .52, "center_y": .15}
+            canvas.before:
+                Color:
+                    rgba: kivy.utils.get_color_from_hex("#1F4762") if self.state == "normal" else kivy.utils.get_color_from_hex("#153040")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]
+            on_release:
+            Image:
+                source: "icons/services/med.png"
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y + 5
+
+        

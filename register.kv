@@ -1,0 +1,248 @@
+MDScreen:
+    name: "register"
+    MDFloatLayout:
+        id: main_layout
+        md_bg_color: kivy.utils.get_color_from_hex("#FDA300")
+        MDIconButton:
+            icon: "icons/arrows/chevron-left@2x.png"
+            user_font_size: "5dp"
+            pos_hint: {"center_x": .05, "center_y": .97}
+            on_release:
+                app.root.current = "login"
+                root.manager.transition.direction = "right"
+        MDLabel:
+            text: "Start Creating an\nAccount"
+            pos_hint: {"center_x": .5, "center_y": .85}
+            halign: "center"
+            font_size: "40dp"
+            font_name: "fonts/Nunito-Light.ttf"
+        MDLabel:
+            text: "Personal Information"
+            pos_hint: {"center_x": .29, "center_y": .70}
+            halign: "center"
+            font_size: "18dp"
+            font_name: "fonts/Nunito-Light.ttf"
+
+        MDFloatLayout:
+            size_hint: .85, .08
+            pos_hint: {"center_x": .47, "center_y": .73} 
+            MDLabel:
+                text: "Full Name"
+                font_size: "12dp"
+                font_name: "fonts/Nunito-Light.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.30}
+            TextInput:
+                id: full_name
+                size_hint_y: .70
+                font_name: "fonts/Nunito-Light.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.82}
+                hint_text: "Juan Delacruz"
+                write_tab: False
+                hint_text_color: 0, 0, 0, .45
+                background_color: 0, 0, 0, 0
+                cursor_color: 0, 0, 0, 1
+                cursor_width: "2dp"
+                foreground_color: 0, 0, 0, 1
+                font_size: "17dp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": .53, "center_y": -1.15}
+                size_hint_y: .03
+                md_bg_color: 0, 0, 0, 1
+
+
+        MDFloatLayout:
+            size_hint: .85, .08
+            pos_hint: {"center_x": .47, "center_y": .65} 
+            MDLabel:
+                text: "Birthday"
+                font_size: "12dp"
+                font_name: "fonts/Nunito-Light.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.30}
+            TextInput:
+                id: bday
+                size_hint_y: .70
+                font_name: "fonts/Nunito-Light.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.82}
+                hint_text: "01/31/22"
+                write_tab: False
+                hint_text_color: 0, 0, 0, .45
+                background_color: 0, 0, 0, 0
+                cursor_color: 0, 0, 0, 1
+                cursor_width: "2dp"
+                foreground_color: 0, 0, 0, 1
+                font_size: "17dp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": .53, "center_y": -1.15}
+                size_hint_y: .03
+                md_bg_color: 0, 0, 0, 1
+
+
+        MDFloatLayout:
+            size_hint: .85, .08
+            pos_hint: {"center_x": .47, "center_y": .57} 
+            MDLabel:
+                text: "Email Address"
+                font_size: "12dp"
+                font_name: "fonts/Nunito-Light.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.30}
+            TextInput:
+                id: email
+                size_hint_y: .70
+                font_name: "fonts/Nunito-Light.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.82}
+                write_tab: False
+                background_color: 0, 0, 0, 0
+                cursor_color: 0, 0, 0, 1
+                cursor_width: "2dp"
+                foreground_color: 0, 0, 0, 1
+                font_size: "17dp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": .53, "center_y": -1.15}
+                size_hint_y: .03
+                md_bg_color: 0, 0, 0, 1
+
+        
+        MDFloatLayout:
+            size_hint: .85, .08
+            pos_hint: {"center_x": .47, "center_y": .49} 
+            MDLabel:
+                text: "Phone Number"
+                font_size: "12dp"
+                font_name: "fonts/Nunito-Light.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.30}
+            TextInput:
+                id: phone
+                size_hint_y: .70
+                font_name: "fonts/Nunito-Light.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.82}
+                write_tab: False
+                background_color: 0, 0, 0, 0
+                cursor_color: 0, 0, 0, 1
+                cursor_width: "2dp"
+                foreground_color: 0, 0, 0, 1
+                font_size: "17dp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": .53, "center_y": -1.15}
+                size_hint_y: .03
+                md_bg_color: 0, 0, 0, 1
+            MDFloatLayout:
+                pos_hint: {"center_x": .53, "center_y": -1.15}
+                size_hint_y: .03
+                md_bg_color: 0, 0, 0, 1
+        
+        MDFloatLayout:
+            size_hint: .85, .08
+            pos_hint: {"center_x": .47, "center_y": .41} 
+            MDLabel:
+                text: "Car Model"
+                font_size: "12dp"
+                font_name: "fonts/Nunito-Light.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.30}
+            TextInput:
+                id: car
+                size_hint_y: .70
+                font_name: "fonts/Nunito-Light.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.82}
+                write_tab: False
+                background_color: 0, 0, 0, 0
+                cursor_color: 0, 0, 0, 1
+                cursor_width: "2dp"
+                foreground_color: 0, 0, 0, 1
+                font_size: "17dp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": .53, "center_y": -1.15}
+                size_hint_y: .03
+                md_bg_color: 0, 0, 0, 1
+
+        MDFloatLayout:
+            size_hint: .85, .08
+            pos_hint: {"center_x": .47, "center_y": .33} 
+            MDLabel:
+                text: "Password"
+                font_size: "12dp"
+                font_name: "fonts/Nunito-Light.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.30}
+            TextInput:
+                id: passwd
+                size_hint_y: .70
+                font_name: "fonts/Nunito-Light.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.82}
+                write_tab: False
+                background_color: 0, 0, 0, 0
+                cursor_color: 0, 0, 0, 1
+                cursor_width: "2dp"
+                foreground_color: 0, 0, 0, 1
+                font_size: "17dp"
+                multiline: False
+                password: True
+            MDFloatLayout:
+                pos_hint: {"center_x": .53, "center_y": -1.15}
+                size_hint_y: .03
+                md_bg_color: 0, 0, 0, 1
+            MDIconButton:
+                id: eye_con_two
+                icon: "icons/basic/eye-no@2x.png" if tog_two.state == "normal" else "icons/basic/eye@2x.png"
+                user_font_size: "5dp"
+                pos_hint: {"center_x": .99, "center_y": -.78}
+                ToggleButton:
+                    id: tog_two
+                    background_color: 0, 0, 0, 0
+                    on_state:
+                        app.show_pass(self, passwd)
+
+        MDFloatLayout:
+            size_hint: .85, .08
+            pos_hint: {"center_x": .47, "center_y": .25} 
+            MDLabel:
+                text: "Account Type"
+                font_size: "12dp"
+                font_name: "fonts/Nunito-Light.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.30}
+            TextInput:
+                id: acct
+                size_hint_y: .70
+                font_name: "fonts/Nunito-Light.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.83}
+                hint_text: "Customer/Business"
+                write_tab: False
+                background_color: 0, 0, 0, 0
+                cursor_color: 0, 0, 0, 1
+                cursor_width: "2dp"
+                foreground_color: 0, 0, 0, 1
+                font_size: "17dp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": .53, "center_y": -1.15}
+                size_hint_y: .03
+                md_bg_color: 0, 0, 0, 1
+
+
+        Button:
+            id: reg_submit
+            text: "Submit"
+            background_color: 0,0,0,0
+            font_name: "fonts/Nunito-Bold.ttf"
+            color: kivy.utils.get_color_from_hex("#FDA300")
+            size_hint: .848, .08
+            pos_hint: {"center_x": .497, "center_y": .06}
+            canvas.before:
+                Color:
+                    rgba: kivy.utils.get_color_from_hex("#1F4762") if self.state == "normal" else kivy.utils.get_color_from_hex("#153040")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [8]
+            on_release:
+                app.submit_reg() if full_name.text != '' and bday.text != '' and email.text != '' and phone.text != '' and car.text != '' and passwd.text != '' and acct.text != '' else app.reg_warning_dialog()
+                full_name.text = ''
+                bday.text = ''
+                email.text = ''
+                phone.text = ''
+                car.text = ''
+                passwd.text = ''
+                acct.text = ''

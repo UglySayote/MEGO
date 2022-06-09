@@ -1,0 +1,273 @@
+MDScreen:
+    name: "settings"
+    MDFloatLayout:
+        md_bg_color: kivy.utils.get_color_from_hex("#FDA300")
+
+        MDFloatLayout:
+            md_bg_color: kivy.utils.get_color_from_hex("#1F4762")
+            size_hint: 1, .07
+            pos_hint: {"center_x": .5, "center_y": .97}
+        MDIconButton:
+            icon: "icons/white/chevron-left.png"
+            user_font_size: ".1dp"
+            pos_hint: {"center_x": .05, "center_y": .97}
+            on_release:
+                app.decide_home()
+                root.manager.transition.direction = "left"
+        MDLabel:
+            text: "Settings"
+            pos_hint: {"center_x": .6, "center_y": .97}
+            halign: "left"
+            font_size: "20dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            color: kivy.utils.get_color_from_hex("#FEDFA6")
+        MDLabel:
+            text: "Device Settings"
+            pos_hint: {"center_x": .545, "center_y": .91}
+            halign: "left"
+            font_size: "14dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            color: kivy.utils.get_color_from_hex("#1F4762")
+        MDFloatLayout:
+            id: sett_lang
+            md_bg_color: kivy.utils.get_color_from_hex("#FEDFA6")
+            size_hint: 1, .065
+            pos_hint: {"center_x": .5, "center_y": .85}
+            Button:
+                text: "    Language"
+                text_size: self.size
+                halign: "left"
+                valign: "center"
+                font_name: "fonts/Nunito-Regular.ttf"
+                color: kivy.utils.get_color_from_hex("#1F4762")
+                background_color: 0,0,0,0
+                pos_hint: {"center_x": .5, "center_y": .5}
+                canvas.before:
+                    Color:
+                        rgba: kivy.utils.get_color_from_hex("#FEDFA6") if self.state == "normal" else kivy.utils.get_color_from_hex("#baa377")
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+        MDFloatLayout:
+            id: sett_notif
+            md_bg_color: kivy.utils.get_color_from_hex("#FEDFA6")
+            size_hint: 1, .065
+            pos_hint: {"center_x": .5, "center_y": .785}
+            Button:
+                text: "    Notifications"
+                text_size: self.size
+                halign: "left"
+                valign: "center"
+                font_name: "fonts/Nunito-Regular.ttf"
+                color: kivy.utils.get_color_from_hex("#1F4762")
+                background_color: 0,0,0,0
+                pos_hint: {"center_x": .5, "center_y": .5}
+                canvas.before:
+                    Color:
+                        rgba: kivy.utils.get_color_from_hex("#FEDFA6") if self.state == "normal" else kivy.utils.get_color_from_hex("#baa377")
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+        MDFloatLayout:
+            id: sett_pers
+            md_bg_color: kivy.utils.get_color_from_hex("#FEDFA6")
+            size_hint: 1, .065
+            pos_hint: {"center_x": .5, "center_y": .72}
+            Button:
+                text: "    Personalization"
+                text_size: self.size
+                halign: "left"
+                valign: "center"
+                font_name: "fonts/Nunito-Regular.ttf"
+                color: kivy.utils.get_color_from_hex("#1F4762")
+                background_color: 0,0,0,0
+                pos_hint: {"center_x": .5, "center_y": .5}
+                canvas.before:
+                    Color:
+                        rgba: kivy.utils.get_color_from_hex("#FEDFA6") if self.state == "normal" else kivy.utils.get_color_from_hex("#baa377")
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+
+        MDLabel:
+            text: "Security"
+            pos_hint: {"center_x": .545, "center_y": .662}
+            halign: "left"
+            font_size: "14dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            color: kivy.utils.get_color_from_hex("#1F4762")
+        MDFloatLayout:
+            id: sett_upd_email
+            md_bg_color: kivy.utils.get_color_from_hex("#FEDFA6")
+            size_hint: 1, .065
+            pos_hint: {"center_x": .5, "center_y": .60}
+            Button:
+                text: "    Update Email"
+                text_size: self.size
+                halign: "left"
+                valign: "center"
+                font_name: "fonts/Nunito-Regular.ttf"
+                color: kivy.utils.get_color_from_hex("#1F4762")
+                background_color: 0,0,0,0
+                pos_hint: {"center_x": .5, "center_y": .5}
+                canvas.before:
+                    Color:
+                        rgba: kivy.utils.get_color_from_hex("#FEDFA6") if self.state == "normal" else kivy.utils.get_color_from_hex("#baa377")
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+        MDFloatLayout:
+            id: sett_upd_psswd
+            md_bg_color: kivy.utils.get_color_from_hex("#FEDFA6")
+            size_hint: 1, .065
+            pos_hint: {"center_x": .5, "center_y": .535}
+            Button:
+                text: "    Update Password"
+                text_size: self.size
+                halign: "left"
+                valign: "center"
+                font_name: "fonts/Nunito-Regular.ttf"
+                color: kivy.utils.get_color_from_hex("#1F4762")
+                background_color: 0,0,0,0
+                pos_hint: {"center_x": .5, "center_y": .5}
+                canvas.before:
+                    Color:
+                        rgba: kivy.utils.get_color_from_hex("#FEDFA6") if self.state == "normal" else kivy.utils.get_color_from_hex("#baa377")
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+        MDFloatLayout:
+            id: sett_acct_rcvry
+            md_bg_color: kivy.utils.get_color_from_hex("#FEDFA6")
+            size_hint: 1, .065
+            pos_hint: {"center_x": .5, "center_y": .47}
+            Button:
+                text: "    Account Recovery"
+                text_size: self.size
+                halign: "left"
+                valign: "center"
+                font_name: "fonts/Nunito-Regular.ttf"
+                color: kivy.utils.get_color_from_hex("#1F4762")
+                background_color: 0,0,0,0
+                pos_hint: {"center_x": .5, "center_y": .5}
+                canvas.before:
+                    Color:
+                        rgba: kivy.utils.get_color_from_hex("#FEDFA6") if self.state == "normal" else kivy.utils.get_color_from_hex("#baa377")
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+        MDFloatLayout:
+            id: sett_pref
+            md_bg_color: kivy.utils.get_color_from_hex("#FEDFA6")
+            size_hint: 1, .065
+            pos_hint: {"center_x": .5, "center_y": .405}
+            Button:
+                text: "    Preferences"
+                text_size: self.size
+                halign: "left"
+                valign: "center"
+                font_name: "fonts/Nunito-Regular.ttf"
+                color: kivy.utils.get_color_from_hex("#1F4762")
+                background_color: 0,0,0,0
+                pos_hint: {"center_x": .5, "center_y": .5}
+                canvas.before:
+                    Color:
+                        rgba: kivy.utils.get_color_from_hex("#FEDFA6") if self.state == "normal" else kivy.utils.get_color_from_hex("#baa377")
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+        
+        MDLabel:
+            text: "About"
+            pos_hint: {"center_x": .545, "center_y": .35}
+            halign: "left"
+            font_size: "14dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            color: kivy.utils.get_color_from_hex("#1F4762")
+        MDFloatLayout:
+            id: sett_prvcy
+            md_bg_color: kivy.utils.get_color_from_hex("#FEDFA6")
+            size_hint: 1, .065
+            pos_hint: {"center_x": .5, "center_y": .29}
+            Button:
+                text: "    Privacy Policy"
+                text_size: self.size
+                halign: "left"
+                valign: "center"
+                font_name: "fonts/Nunito-Regular.ttf"
+                color: kivy.utils.get_color_from_hex("#1F4762")
+                background_color: 0,0,0,0
+                pos_hint: {"center_x": .5, "center_y": .5}
+                canvas.before:
+                    Color:
+                        rgba: kivy.utils.get_color_from_hex("#FEDFA6") if self.state == "normal" else kivy.utils.get_color_from_hex("#baa377")
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+        MDFloatLayout:
+            id: sett_rate
+            md_bg_color: kivy.utils.get_color_from_hex("#FEDFA6")
+            size_hint: 1, .065
+            pos_hint: {"center_x": .5, "center_y": .225}
+            Button:
+                text: "    Rate Us"
+                text_size: self.size
+                halign: "left"
+                valign: "center"
+                font_name: "fonts/Nunito-Regular.ttf"
+                color: kivy.utils.get_color_from_hex("#1F4762")
+                background_color: 0,0,0,0
+                pos_hint: {"center_x": .5, "center_y": .5}
+                canvas.before:
+                    Color:
+                        rgba: kivy.utils.get_color_from_hex("#FEDFA6") if self.state == "normal" else kivy.utils.get_color_from_hex("#baa377")
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+        MDFloatLayout:
+            id: sett_terms
+            md_bg_color: kivy.utils.get_color_from_hex("#FEDFA6")
+            size_hint: 1, .065
+            pos_hint: {"center_x": .5, "center_y": .16}
+            Button:
+                text: "    Terms & Conditions"
+                text_size: self.size
+                halign: "left"
+                valign: "center"
+                font_name: "fonts/Nunito-Regular.ttf"
+                color: kivy.utils.get_color_from_hex("#1F4762")
+                background_color: 0,0,0,0
+                pos_hint: {"center_x": .5, "center_y": .5}
+                canvas.before:
+                    Color:
+                        rgba: kivy.utils.get_color_from_hex("#FEDFA6") if self.state == "normal" else kivy.utils.get_color_from_hex("#baa377")
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+        MDFloatLayout:
+            id: sett_logout
+            md_bg_color: kivy.utils.get_color_from_hex("#FEDFA6")
+            size_hint: 1, .065
+            pos_hint: {"center_x": .5, "center_y": .065}
+            Button:
+                text: "    Log Out"
+                text_size: self.size
+                halign: "left"
+                valign: "center"
+                font_name: "fonts/Nunito-Regular.ttf"
+                color: kivy.utils.get_color_from_hex("#1F4762")
+                background_color: 0,0,0,0
+                pos_hint: {"center_x": .5, "center_y": .5}
+                canvas.before:
+                    Color:
+                        rgba: kivy.utils.get_color_from_hex("#FEDFA6") if self.state == "normal" else kivy.utils.get_color_from_hex("#baa377")
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                on_release:
+                    app.clear_login()
+                    app.logout_alert_dialog()
+                    root.manager.transition.direction = "right"
+
+
+

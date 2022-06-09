@@ -1,0 +1,186 @@
+MDScreen:
+    name: "autoshop"
+    MDFloatLayout:
+        md_bg_color: kivy.utils.get_color_from_hex("#FDA300")
+
+        MDFloatLayout:
+            md_bg_color: kivy.utils.get_color_from_hex("#1F4762")
+            size_hint: 1, .07
+            pos_hint: {"center_x": .5, "center_y": .97}
+        MDIconButton:
+            icon: "icons/white/chevron-left.png"
+            user_font_size: ".1dp"
+            pos_hint: {"center_x": .05, "center_y": .97}
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+        MDLabel:
+            text: "Automobile Parts Shop"
+            pos_hint: {"center_x": .6, "center_y": .97}
+            halign: "left"
+            font_size: "20dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            color: kivy.utils.get_color_from_hex("#FEDFA6")
+        
+        Button:
+            text: "TIRES"
+            text_size: self.size     
+            halign: 'right'
+            valign: 'center'
+            padding_x: 10
+            font_size: "25dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            background_color: 0,0,0,0
+            color: kivy.utils.get_color_from_hex("#FDA300")
+            size_hint: .9, .11
+            pos_hint: {"center_x": .5, "center_y": .82}
+            canvas.before:
+                Color:
+                    rgba: kivy.utils.get_color_from_hex("#1F4762") if self.state == "normal" else kivy.utils.get_color_from_hex("#153040")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]
+            on_release:
+                #app.root.current = "settings"
+                #root.manager.transition.direction = "left"
+        Image:
+            source: "images/tire.png"
+            size_hint: .30, .15
+            pos_hint: {"center_x": .23, "center_y": .82}
+
+        
+        Button:
+            text: "OILS/FLUIDS"
+            text_size: self.size     
+            halign: 'right'
+            valign: 'center'
+            padding_x: 10
+            font_size: "25dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            background_color: 0,0,0,0
+            color: kivy.utils.get_color_from_hex("#FDA300")
+            size_hint: .9, .11
+            pos_hint: {"center_x": .5, "center_y": .68}
+            canvas.before:
+                Color:
+                    rgba: kivy.utils.get_color_from_hex("#1F4762") if self.state == "normal" else kivy.utils.get_color_from_hex("#153040")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]
+            on_release:
+                #app.root.current = "settings"
+                #root.manager.transition.direction = "left"
+        Image:
+            source: "images/oil.png"
+            size_hint: .30, .15
+            pos_hint: {"center_x": .20, "center_y": .69}
+                
+        Button:
+            text: "FILTERS"
+            text_size: self.size     
+            halign: 'right'
+            valign: 'center'
+            padding_x: 10
+            font_size: "25dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            background_color: 0,0,0,0
+            color: kivy.utils.get_color_from_hex("#FDA300")
+            size_hint: .9, .11
+            pos_hint: {"center_x": .5, "center_y": .54}
+            canvas.before:
+                Color:
+                    rgba: kivy.utils.get_color_from_hex("#1F4762") if self.state == "normal" else kivy.utils.get_color_from_hex("#153040")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]
+            on_release:
+                #app.root.current = "settings"
+                #root.manager.transition.direction = "left"
+        Image:
+            source: "images/filter.png"
+            size_hint: .30, .15
+            pos_hint: {"center_x": .20, "center_y": .54}
+
+        Button:
+            text: "SEAT COVERS"
+            text_size: self.size     
+            halign: 'right'
+            valign: 'center'
+            padding_x: 10
+            font_size: "25dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            background_color: 0,0,0,0
+            color: kivy.utils.get_color_from_hex("#FDA300")
+            size_hint: .9, .11
+            pos_hint: {"center_x": .5, "center_y": .40}
+            canvas.before:
+                Color:
+                    rgba: kivy.utils.get_color_from_hex("#1F4762") if self.state == "normal" else kivy.utils.get_color_from_hex("#153040")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]
+            on_release:
+                #app.root.current = "settings"
+                #root.manager.transition.direction = "left"
+        Image:
+            source: "images/seat.png"
+            size_hint: .32, .15
+            pos_hint: {"center_x": .22, "center_y": .40}
+
+        Button:
+            text: "RIMS"
+            text_size: self.size     
+            halign: 'right'
+            valign: 'center'
+            padding_x: 10
+            font_size: "25dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            background_color: 0,0,0,0
+            color: kivy.utils.get_color_from_hex("#FDA300")
+            size_hint: .9, .11
+            pos_hint: {"center_x": .5, "center_y": .26}
+            canvas.before:
+                Color:
+                    rgba: kivy.utils.get_color_from_hex("#1F4762") if self.state == "normal" else kivy.utils.get_color_from_hex("#153040")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]
+            on_release:
+                #app.root.current = "settings"
+                #root.manager.transition.direction = "left"
+        Image:
+            source: "images/rims.png"
+            size_hint: .32, .20
+            pos_hint: {"center_x": .23, "center_y": .26}
+
+        Button:
+            text: "CAR ACCESORIES"
+            text_size: self.size     
+            halign: 'right'
+            valign: 'center'
+            padding_x: 10
+            font_size: "25dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            background_color: 0,0,0,0
+            color: kivy.utils.get_color_from_hex("#FDA300")
+            size_hint: .9, .11
+            pos_hint: {"center_x": .5, "center_y": .12}
+            canvas.before:
+                Color:
+                    rgba: kivy.utils.get_color_from_hex("#1F4762") if self.state == "normal" else kivy.utils.get_color_from_hex("#153040")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [10]
+            on_release:
+                #app.root.current = "settings"
+                #root.manager.transition.direction = "left"
+        Image:
+            source: "images/acc.png"
+            size_hint: .30, .15
+            pos_hint: {"center_x": .16, "center_y": .11}

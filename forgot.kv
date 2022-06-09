@@ -1,0 +1,68 @@
+MDScreen:
+    name: "forgot"
+    MDFloatLayout:
+        md_bg_color: kivy.utils.get_color_from_hex("#FDA300")
+        MDIconButton:
+            icon: "icons/arrows/chevron-left@2x.png"
+            user_font_size: "5dp"
+            pos_hint: {"center_x": .05, "center_y": .97}
+            on_release:
+                app.root.current = "login"
+                root.manager.transition.direction = "right"
+        MDLabel:
+            text: "Verify your\nAccount"
+            pos_hint: {"center_x": .5, "center_y": .85}
+            halign: "center"
+            font_size: "40dp"
+            font_name: "fonts/Nunito-Light.ttf"
+        MDLabel:
+            text: "Enter you email address below\nto reset password"
+            pos_hint: {"center_x": .5, "center_y": .70}
+            halign: "center"
+            font_size: "15dp"
+            font_name: "fonts/Nunito-Light.ttf"
+
+        MDFloatLayout:
+            size_hint: .85, .08
+            pos_hint: {"center_x": .47, "center_y": .65} 
+            MDLabel:
+                text: "Email"
+                font_size: "12dp"
+                font_name: "fonts/Nunito-Bold.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.30}
+            TextInput:
+                id: forg_email
+                size_hint_y: .70
+                font_name: "fonts/Nunito-Light.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.82}
+                hint_text: "juandelacruz@gmail.com"
+                write_tab: False
+                hint_text_color: 0, 0, 0, .45
+                background_color: 0, 0, 0, 0
+                cursor_color: 0, 0, 0, 1
+                cursor_width: "2dp"
+                foreground_color: 0, 0, 0, 1
+                font_size: "17dp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": .53, "center_y": -1.15}
+                size_hint_y: .03
+                md_bg_color: 0, 0, 0, 1
+            
+        Button:
+            id: forg_reset
+            text: "Reset Password"
+            background_color: 0,0,0,0
+            font_name: "fonts/Nunito-Bold.ttf"
+            color: kivy.utils.get_color_from_hex("#FDA300")
+            size_hint: .848, .08
+            pos_hint: {"center_x": .497, "center_y": .42}
+            canvas.before:
+                Color:
+                    rgba: kivy.utils.get_color_from_hex("#1F4762") if self.state == "normal" else kivy.utils.get_color_from_hex("#153040")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [8]
+            on_release:
+                app.submit_forgot()

@@ -1,0 +1,260 @@
+MDScreen:
+    name: "planner"
+    MDFloatLayout:
+        md_bg_color: kivy.utils.get_color_from_hex("#FDA300")
+        MDFloatLayout:
+            md_bg_color: kivy.utils.get_color_from_hex("#1F4762")
+            size_hint: 1, .07
+            pos_hint: {"center_x": .5, "center_y": .97}
+        MDIconButton:
+            icon: "icons/white/chevron-left.png"
+            user_font_size: ".1dp"
+            pos_hint: {"center_x": .05, "center_y": .97}
+            on_release:
+                app.root.current = "home"
+                root.manager.transition.direction = "right"
+        MDLabel:
+            text: "Travel Planner"
+            pos_hint: {"center_x": .6, "center_y": .97}
+            halign: "left"
+            font_size: "20dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            color: kivy.utils.get_color_from_hex("#FEDFA6")
+        MDLabel:
+            text: "Trip Overview"
+            pos_hint: {"center_x": .55, "center_y": .88}
+            halign: "left"
+            font_size: "25dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            color: kivy.utils.get_color_from_hex("#1F4762")
+        Button:
+            text: "Select Date"
+            background_color: 0, 0, 0, 0
+            font_name: "fonts/Nunito-Regular.ttf"
+            color: kivy.utils.get_color_from_hex("#FEDFA6")
+            size_hint: .25, .05
+            pos_hint: {"center_x": .83, "center_y": .88}
+            canvas.before:
+                Color:
+                    rgba: kivy.utils.get_color_from_hex("#1F4762") if self.state == "normal" else kivy.utils.get_color_from_hex("#153040")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [8]
+            on_release:
+                app.select_date()
+        MDLabel:
+            text: "Start Date  :"
+            pos_hint: {"center_x": .20, "center_y": .80}
+            halign: "center"
+            font_size: "16dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+            color: kivy.utils.get_color_from_hex("#1F4762")
+        MDLabel:
+            id: first_day
+            text: ""
+            pos_hint: {"center_x": .85, "center_y": .80}
+            halign: "left"
+            font_size: "16dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+            color: kivy.utils.get_color_from_hex("#1F4762")
+        MDLabel:
+            text: "End Date    :"
+            pos_hint: {"center_x": .20, "center_y": .75}
+            halign: "center"
+            font_size: "16dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+            color: kivy.utils.get_color_from_hex("#1F4762")
+        MDLabel:
+            id: last_day
+            text: ""
+            pos_hint: {"center_x": .85, "center_y": .75}
+            halign: "left"
+            font_size: "16dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+            color: kivy.utils.get_color_from_hex("#1F4762")
+        MDLabel:
+            text: "Duration     :"
+            pos_hint: {"center_x": .20, "center_y": .70}
+            halign: "center"
+            font_size: "16dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+            color: kivy.utils.get_color_from_hex("#1F4762")
+        MDLabel:
+            id: dur
+            text: ""
+            pos_hint: {"center_x": .85, "center_y": .70}
+            halign: "left"
+            font_size: "16dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+            color: kivy.utils.get_color_from_hex("#1F4762")
+            
+        MDLabel:
+            text: "List of Travellers"
+            pos_hint: {"center_x": .55, "center_y": .63}
+            halign: "left"
+            font_size: "25dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            color: kivy.utils.get_color_from_hex("#1F4762")
+        MDFloatLayout:
+            size_hint: .82, .08
+            pos_hint: {"center_x": .47, "center_y": .68} 
+            TextInput:
+                id: trav_one
+                size_hint_y: .70
+                font_name: "fonts/Nunito-Light.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.82}
+                hint_text: "Juan Delacruz"
+                hint_text_color: 0, 0, 0, .45
+                write_tab: False
+                background_color: 0, 0, 0, 0
+                cursor_color: 0, 0, 0, 1
+                cursor_width: "2dp"
+                foreground_color: 0, 0, 0, 1
+                font_size: "17dp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": .53, "center_y": -1.15}
+                size_hint_y: .03
+                md_bg_color: 0, 0, 0, 1
+        MDFloatLayout:
+            size_hint: .82, .08
+            pos_hint: {"center_x": .47, "center_y": .62}
+            TextInput:
+                id: trav_two
+                size_hint_y: .70
+                font_name: "fonts/Nunito-Light.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.82}
+                write_tab: False
+                background_color: 0, 0, 0, 0
+                cursor_color: 0, 0, 0, 1
+                cursor_width: "2dp"
+                foreground_color: 0, 0, 0, 1
+                font_size: "17dp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": .53, "center_y": -1.15}
+                size_hint_y: .03
+                md_bg_color: 0, 0, 0, 1
+        MDFloatLayout:
+            size_hint: .82, .08
+            pos_hint: {"center_x": .47, "center_y": .56}
+            TextInput:
+                id: trav_three
+                size_hint_y: .70
+                font_name: "fonts/Nunito-Light.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.82}
+                write_tab: False
+                background_color: 0, 0, 0, 0
+                cursor_color: 0, 0, 0, 1
+                cursor_width: "2dp"
+                foreground_color: 0, 0, 0, 1
+                font_size: "17dp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": .53, "center_y": -1.15}
+                size_hint_y: .03
+                md_bg_color: 0, 0, 0, 1
+        MDFloatLayout:
+            size_hint: .82, .08
+            pos_hint: {"center_x": .47, "center_y": .50} 
+            TextInput:
+                id: trav_four
+                size_hint_y: .70
+                font_name: "fonts/Nunito-Light.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.82}
+                write_tab: False
+                background_color: 0, 0, 0, 0
+                cursor_color: 0, 0, 0, 1
+                cursor_width: "2dp"
+                foreground_color: 0, 0, 0, 1
+                font_size: "17dp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": .53, "center_y": -1.15}
+                size_hint_y: .03
+                md_bg_color: 0, 0, 0, 1
+
+        MDLabel:
+            text: "Destinations"
+            pos_hint: {"center_x": .55, "center_y": .32}
+            halign: "left"
+            font_size: "25dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            color: kivy.utils.get_color_from_hex("#1F4762")
+        MDFloatLayout:
+            size_hint: .82, .08
+            pos_hint: {"center_x": .47, "center_y": .37}
+            TextInput:
+                id: dest_one
+                size_hint_y: .70
+                font_name: "fonts/Nunito-Light.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.82}
+                hint_text: "Rizal Park, Manila City"
+                hint_text_color: 0, 0, 0, .45
+                write_tab: False
+                background_color: 0, 0, 0, 0
+                cursor_color: 0, 0, 0, 1
+                cursor_width: "2dp"
+                foreground_color: 0, 0, 0, 1
+                font_size: "17dp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": .53, "center_y": -1.15}
+                size_hint_y: .03
+                md_bg_color: 0, 0, 0, 1
+        MDFloatLayout:
+            size_hint: .82, .08
+            pos_hint: {"center_x": .47, "center_y": .31} 
+            TextInput:
+                id: dest_two
+                size_hint_y: .70
+                font_name: "fonts/Nunito-Light.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.82}
+                write_tab: False
+                background_color: 0, 0, 0, 0
+                cursor_color: 0, 0, 0, 1
+                cursor_width: "2dp"
+                foreground_color: 0, 0, 0, 1
+                font_size: "17dp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": .53, "center_y": -1.15}
+                size_hint_y: .03
+                md_bg_color: 0, 0, 0, 1
+        MDFloatLayout:
+            size_hint: .82, .08
+            pos_hint: {"center_x": .47, "center_y": .25} 
+            TextInput:
+                id: dest_three
+                size_hint_y: .70
+                font_name: "fonts/Nunito-Light.ttf"
+                pos_hint: {"center_x": .53, "center_y": -.82}
+                write_tab: False
+                background_color: 0, 0, 0, 0
+                cursor_color: 0, 0, 0, 1
+                cursor_width: "2dp"
+                foreground_color: 0, 0, 0, 1
+                font_size: "17dp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": .53, "center_y": -1.15}
+                size_hint_y: .03
+                md_bg_color: 0, 0, 0, 1
+        Button:
+            id: plan_submit
+            text: "Submit"
+            background_color: 0,0,0,0
+            font_name: "fonts/Nunito-Bold.ttf"
+            color: kivy.utils.get_color_from_hex("#FDA300")
+            size_hint: .85, .08
+            pos_hint: {"center_x": .50, "center_y": .06}
+            canvas.before:
+                Color:
+                    rgba: kivy.utils.get_color_from_hex("#1F4762") if self.state == "normal" else kivy.utils.get_color_from_hex("#153040")
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [8]
+            on_release:
+                app.planner_success_dialog()

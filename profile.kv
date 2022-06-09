@@ -1,0 +1,98 @@
+MDScreen:
+    name: "profile"
+    MDFloatLayout:
+        md_bg_color: kivy.utils.get_color_from_hex("#FDA300")
+
+        MDIconButton:
+            icon: "icons/arrows/chevron-left@2x.png"
+            user_font_size: "5dp"
+            pos_hint: {"center_x": .05, "center_y": .97}
+            on_release:
+                app.decide_home()
+                root.manager.transition.direction = "right"
+        Image:
+            source: "images/pfp.png"
+            size_hint: None, None
+            width: "225dp"
+            height: "225dp"
+            allow_stretch: True
+            pos_hint: {"center_x": .5, "center_y": .75}
+    
+        MDLabel:
+            id: prof_name
+            text: ""
+            pos_hint: {"center_x": .5, "center_y": .55}
+            halign: "center"
+            font_size: "25dp"
+            font_name: "fonts/Nunito-Bold.ttf"
+            color: kivy.utils.get_color_from_hex("#000000")
+        MDLabel:
+            id: prof_email
+            text: ""
+            pos_hint: {"center_x": .5, "center_y": .50}
+            halign: "center"
+            font_size: "16dp"
+            font_name: "fonts/Nunito-italic.ttf"
+            color: kivy.utils.get_color_from_hex("#000000")
+        MDLabel:
+            id: prof_phone
+            text: ""
+            pos_hint: {"center_x": .40, "center_y": .40}
+            halign: "right"
+            font_size: "16dp"
+            font_name: "fonts/Nunito-italic.ttf"
+            color: kivy.utils.get_color_from_hex("#000000")
+        MDLabel:
+            id: prof_car
+            text: ""
+            pos_hint: {"center_x": .40, "center_y": .35}
+            halign: "right"
+            font_size: "16dp"
+            font_name: "fonts/Nunito-italic.ttf"
+            color: kivy.utils.get_color_from_hex("#000000")
+        MDLabel:
+            id: prof_bday
+            text: ""
+            pos_hint: {"center_x": .4, "center_y": .30}
+            halign: "right"
+            font_size: "16dp"
+            font_name: "fonts/Nunito-italic.ttf"
+            color: kivy.utils.get_color_from_hex("#000000")
+        MDLabel:
+            id: prof_type
+            text: ""
+            pos_hint: {"center_x": .4, "center_y": .25}
+            halign: "right"
+            font_size: "16dp"
+            font_name: "fonts/Nunito-italic.ttf"
+            color: kivy.utils.get_color_from_hex("#000000")
+
+
+        MDLabel:
+            text: "Contact Number:"
+            pos_hint: {"center_x": .6, "center_y": .40}
+            halign: "left"
+            font_size: "16dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+            color: kivy.utils.get_color_from_hex("#000000")
+        MDLabel:
+            text: "Car Model:"
+            pos_hint: {"center_x": .6, "center_y": .35}
+            halign: "left"
+            font_size: "16dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+            color: kivy.utils.get_color_from_hex("#000000")
+        MDLabel:
+            text: "Birthday:"
+            pos_hint: {"center_x": .6, "center_y": .30}
+            halign: "left"
+            font_size: "16dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+            color: kivy.utils.get_color_from_hex("#000000")
+        MDLabel:
+            text: "Account Type:"
+            pos_hint: {"center_x": .6, "center_y": .25}
+            halign: "left"
+            font_size: "16dp"
+            font_name: "fonts/Nunito-Regular.ttf"
+            color: kivy.utils.get_color_from_hex("#000000")
