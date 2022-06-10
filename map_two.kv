@@ -1,0 +1,25 @@
+MDScreen:
+    name:"map_two"
+    MapView:
+        id:map
+        lat: 14.69557062713212
+        lon: 121.12329539518919 
+        zoom: 14
+    MDFloatLayout:
+        md_bg_color: kivy.utils.get_color_from_hex("#1F4762")
+        size_hint: 1, .07
+        pos_hint: {"center_x": .5, "center_y": .97}
+    MDIconButton:
+        icon: "icons/white/chevron-left.png"
+        user_font_size: ".1dp"
+        pos_hint: {"center_x": .05, "center_y": .97}
+        on_release:
+            app.root.current = "home_business"
+            root.manager.transition.direction = "right"
+    MDLabel:
+        text: "Check Customer"
+        pos_hint: {"center_x": .6, "center_y": .97}
+        halign: "left"
+        font_size: "20dp"
+        font_name: "fonts/Nunito-Bold.ttf"
+        color: kivy.utils.get_color_from_hex("#FEDFA6")

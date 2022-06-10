@@ -49,6 +49,7 @@ class MainApp(MDApp):
         sm.add_widget(Builder.load_file("profile.kv"))
         sm.add_widget(Builder.load_file("settings.kv"))
         sm.add_widget(Builder.load_file("map_one.kv"))
+        sm.add_widget(Builder.load_file("map_two.kv"))
         sm.add_widget(Builder.load_file("planner.kv"))
         sm.add_widget(Builder.load_file("promo.kv"))
         sm.add_widget(Builder.load_file("autoshop.kv"))

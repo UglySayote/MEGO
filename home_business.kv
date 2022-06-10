@@ -42,6 +42,12 @@ MDScreen:
                     pos: self.pos
                     radius: [10]
             on_release:
+                app.root.current = "map_two"
+                root.manager.transition.direction = "left"
+            Image:
+                source: "icons\home\customer.png"
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y + 5
         Button:
             text: "Services"
             text_size: self.size     
@@ -62,6 +68,10 @@ MDScreen:
                     pos: self.pos
                     radius: [10]
             on_release:
+            Image:
+                source: "icons\home\services.png"
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y + 5
 
         Button:
             text: "Promotions"
@@ -110,6 +120,11 @@ MDScreen:
                     pos: self.pos
                     radius: [10]
             on_release:
+            Image:
+                source: "icons\home\order.png"
+                size_hint: .5, .5
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y + 5
         Button:
             text: "Transaction Record"
             text_size: self.size     
